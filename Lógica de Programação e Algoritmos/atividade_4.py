@@ -59,6 +59,7 @@ def cadastrarPeca(pecas, codigo_counter):
                 "valor": valor
             }
             pecas.append(nova_peca)
+            print(f">> Peça cadastrada com sucesso:\n {nova_peca}")
             break  # saindo do loop de cadastro
 
         except ValueError:
@@ -82,6 +83,7 @@ def consultarPeca(pecas):
                 for peca in pecas:
                     printPeca(peca)
                 printLine()
+                print(f">> Total de {len(pecas)} peças em estoque.")
 
             elif (opcao_consulta == 2):
                 codigo_peca = int(input("Digite o código da peça: "))
@@ -115,7 +117,7 @@ def removerPeca(pecas):
             for peca in pecas:
                 if (peca['codigo'] == codigo_peca):
                     pecas.remove(peca)
-                    print(f"(!) Peça removida com sucesso: {peca} ")
+                    print(f">> Peça removida com sucesso:\n {peca} ")
                     break
             else:
                 print("(!) Peça não encontrada.")
