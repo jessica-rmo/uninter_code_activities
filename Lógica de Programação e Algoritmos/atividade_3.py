@@ -1,10 +1,8 @@
-print("""
->>> Bem-vindo(a) a Cia de logística S.A. <<<
->> Desenvolvido por Jéssica Raquel de Melo Oliveira (RU: 3593002) <<
-""")
-
 
 def main():  # função principal que chama as funções específicas do programa
+    print(">>> Bem-vindo(a) a Cia de logística S.A. <<<\n" +
+    ">> Desenvolvido por Jéssica Raquel de Melo Oliveira (RU: 3593002) <<")
+
     dimensoes = dimensoesObjeto()
     peso = pesoObjeto()
     rota = rotaObjeto()
