@@ -4,7 +4,7 @@ print("""
 """)
 
 
-def main():
+def main():  # função principal que chama as funções específicas do programa
     dimensoes = dimensoesObjeto()
     peso = pesoObjeto()
     rota = rotaObjeto()
@@ -22,6 +22,8 @@ def dimensoesObjeto():
             largura = float(input("Digite a largura do objeto (em cm): "))
 
             volume = altura * comprimento * largura
+            print(f"O volume do objeto é (em cm³): {volume}")
+
             if (volume < 1000):
                 return 10
             elif (volume < 10000):
@@ -30,7 +32,7 @@ def dimensoesObjeto():
                 return 30
             elif (volume < 100000): 
                 return 50
-            else:  # volume >= 100000:
+            else:  # valor inválido --> volume >= 100000:
                 raise Exception
         except ValueError:
             print("Você digitou uma dimensão com valor não numérico.")
@@ -53,7 +55,7 @@ def pesoObjeto():
                 return 2
             elif (peso < 30):
                 return 3
-            else:  # peso => 30
+            else:  # valor inválido --> peso => 30
                 raise Exception
         except ValueError:
             print("Você digitou o peso do objeto com valor não numérico.")
@@ -78,15 +80,15 @@ def rotaObjeto():
                 " RJDF - Rio de Janeiro até Brasília\n" +
                 ">>>", end=" ")
             rota = input()
-            rotas = {
+            rotas = {  # dicionário com as siglas das rotas e os multiplicadores associados
                 "RJSP": 1   , "SPRJ": 1   ,
                 "DFSP": 1.2 , "SPDF": 1.2 ,
                 "DFRJ": 1.5 , "RJDF": 1.5
             }
-            if (rota.upper() not in rotas.keys()):
+            if (rota.upper() not in rotas.keys()):  # verifica se o valor informado para a rota não existe como chave no dicionário
                 raise Exception
             else:
-                return rotas.get(rota.upper())
+                return rotas.get(rota.upper())  # se existe, seleciona o valor de acordo com a sigla informada
         except Exception:
             print("Você digitou uma rota inexistente.")
             print("Por favor, informe o rota novamente.")
