@@ -96,8 +96,6 @@ def consultarPeca(pecas):
                 for peca in pecas:
                     if (peca['fabricante'] == fabricante_peca):
                         printPeca(peca)
-                else:
-                    print("(!) Fabricante não encontrado.")
                 printLine()
 
             elif (opcao_consulta == 4):
